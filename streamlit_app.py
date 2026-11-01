@@ -33,7 +33,7 @@ points = (
     alt.Chart()
     .mark_point()
     .encode(
-        alt.X("monthdate(date):T", title="Date"),
+        alt.X("monthdate(date):T", title="Date (Month Year)"),
         alt.Y(
             "temp_max:Q",
             title="Maximum Daily Temperature (C)",
@@ -63,7 +63,7 @@ bars = (
     .add_params(click)
 )
 
-chart = alt.vconcat(points, bars, data=source, title="Seattle Weather: 2012-2015")
+chart = alt.vconcat(points, bars, data=source, title="Seattle Weather - 2001 to 2006")
 
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Altair native theme"])
 
